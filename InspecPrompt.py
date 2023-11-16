@@ -1,7 +1,6 @@
 import string
 from nltk.corpus import stopwords
 
-# no se si deberíamos también bajar las de inglés
 stopwords_espanol = stopwords.words("spanish")
 stopwords_ingles = stopwords.words("english")
 
