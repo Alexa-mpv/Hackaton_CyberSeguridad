@@ -1,0 +1,16 @@
+Información tipos:
+    De indentificación 
+        Info que se puede usar para doxxeo
+    Financiera 
+        Lo que implica hacer una transacción bancaria 
+    Médica 
+        Informacion medica, como historial medico, alergias, enfermedades, etc 
+    Contraseñas
+        Se explica sola 
+    Sensible
+        Informacion que se puede usar para dañar a una persona, como las nudes, creecias, politicas, etc 
+Pasos:
+    Determinar el nivel de riesgo para el usario 
+    Informar en lo que se anda metiendo
+    Regañarlo por andar subiendo esas cosas que no se pase con un mensaje bien recio
+
