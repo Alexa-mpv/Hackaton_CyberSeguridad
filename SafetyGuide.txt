@@ -12,5 +12,5 @@ Información tipos:
 Pasos:
     Determinar el nivel de riesgo para el usario 
     Informar en lo que se anda metiendo
-    Regañarlo por andar subiendo esas cosas que no se pase con un mensaje bien recio
+    Regañarlo por andar subiendo esas cosas, que no se pase y con un mensaje bien recio
 
