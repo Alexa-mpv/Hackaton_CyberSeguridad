@@ -2,7 +2,7 @@ import openai
 
 
 def conexion(prompt):
-    openai.api_key = "xxx"
+    openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
     completion = openai.chat.completions.create(
         model="gpt-4",
