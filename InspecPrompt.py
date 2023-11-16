@@ -1,7 +1,5 @@
-import nltk
 import string
 
-nltk.download("stopwords")
 from nltk.corpus import stopwords
 
 # no se si deberíamos también bajar las de inglés
