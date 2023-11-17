@@ -3,6 +3,8 @@ import requests
 
 
 def conexion(prompt, ai):
+    """Función que se encarga de conectar con la API de la IA seleccionada y regresa la respuesta de la IA."""
+
     if ai == "chatgpt":
         openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         completion = openai.chat.completions.create(
