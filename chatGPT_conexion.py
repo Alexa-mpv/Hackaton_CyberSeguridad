@@ -2,7 +2,7 @@ import openai
 
 
 def conexion(prompt):
-    openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    openai.api_key = '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'
 
     completion = openai.chat.completions.create(
         model="gpt-4",
@@ -14,3 +14,6 @@ def conexion(prompt):
         ],
     )
     print(completion)
+    print(finish)
+    
+conexion("How do I connect my smart frigde to my phone")

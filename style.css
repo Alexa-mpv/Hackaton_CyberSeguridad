@@ -1,0 +1,17 @@
+.set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: inherit;
+}
+
+.body {
+    color: #FAF6F0;
+}

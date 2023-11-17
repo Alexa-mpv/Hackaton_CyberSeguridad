@@ -18,6 +18,56 @@ function createJSON() {
     url:"/test",
     type:"POST",
     contentType:"application/json",
-    data: str
+    data: JSON.stringify(str)
+    
+    
+    //success: function(response) {
+    //  console.log("Success:", response);
+    //},
+    //error: function(error) {
+    //  console.error("Error:", error);
+    //}
+  }).then(function (response) { // At this point, Flask has printed our JSON
+    return response.text();
+  }).then(function (text) {
+
+    console.log('POST response: ');
+
+    // Should be 'OK' if everything was successful
+    console.log(text);
+  });;
+}
+
+function createJSON1() {
+  fetch('/test', {
+
+    // Declare what type of data we're sending
+    headers: {
+      'Content-Type': 'application/json'
+    },
+
+    // Specify the method
+    method: 'POST',
+
+    // A JSON payload
+    body: JSON.stringify({
+        "greeting": "Hello from the browser!"
+    })
+  }).then(function (response) { // At this point, Flask has printed our JSON
+    return response.text();
+  }).then(function (text) {
+
+    console.log('POST response: ');
+
+    // Should be 'OK' if everything was successful
+    console.log(text);
   });
 }
+
+document.body.addEventListener("keypress", function(event) {
+  console.log("si entro");
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("SendMessageBtn").click();
+  }
+});
