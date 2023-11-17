@@ -11,4 +11,4 @@ def jala_o_no(fer, alexa):
         elif fer <= 25:
             return "La entrada presenta un riesgo de seguridad."
         else:
-            return "La entrada presenta un bajo riesgo de seguridad. "
+            return "La entrada presenta un bajo riesgo de seguridad."
