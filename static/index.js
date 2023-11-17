@@ -38,7 +38,16 @@ function createJSON() {
   });;
 }
 
+  fetch('/test')
+      .then(function (response) {
+          return response.text();
+      }).then(function (text) {
+          console.log('GET response text:');
+          console.log(text); // Print the greeting as text
+      });
+
 function createJSON1() {
+  
   fetch('/test', {
 
     // Declare what type of data we're sending

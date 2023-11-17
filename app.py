@@ -2,7 +2,7 @@ import json
 import openai
 
 from flask import request
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -10,14 +10,21 @@ app = Flask(__name__)
 def index():
     return render_template('index.js')
 
-@app.route('/test', methods=['POST'])
+@app.route('/test', methods=['GET', 'POST'])
 def test():
-    output = request.get_json()
-    print(output)
-    print("si entro")
-    conexion(output)
     
-    result = json.loads(output)
+    if request.method == 'POST':
+    
+        output = request.get_json()
+        print(output)
+        print("si entro")
+        conexion(output)
+        
+        result = json.loads(output)
+        return 'OK', 200
+    else:
+        message = {'greeting':'Hello from Flask!'}
+        return jsonify(message)
 
 
 
