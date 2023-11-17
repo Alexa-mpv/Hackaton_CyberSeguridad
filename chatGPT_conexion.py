@@ -1,16 +1,30 @@
 import openai
+import requests
 
 
-def conexion(prompt):
-    openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-    completion = openai.chat.completions.create(
-        model="gpt-4",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt,
-            },
-        ],
-    )
-    print(completion)
+def conexion(prompt, ai):
+    if ai == "chatgpt":
+        openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        completion = openai.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                },
+            ],
+        )
+        print(completion)
+    elif ai == "copilot":
+        url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
+        headers = {
+            "Ocp-Apim-Subscription-Key": "api_key",
+        }
+        params = {
+            "prompt": prompt,
+        }
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+        print(data)
+    else:
+        print("No se ha seleccionado ninguna IA")
