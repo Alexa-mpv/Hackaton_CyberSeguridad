@@ -1,3 +1,4 @@
+import sensibleData
 import requests
 
 
@@ -17,11 +18,6 @@ peligro = Grafo()
 peligro.inserta()
 
 
-def encontrarDatosSensibles(palabra: str) -> bool:
-    siono = False
-    return siono
-
-
 def analiza_vulnerabilidad(palabras: list) -> [int, int]:
     susis = 0
     secsAlCuad = 0
@@ -37,7 +33,7 @@ def analiza_vulnerabilidad(palabras: list) -> [int, int]:
         else:
             secsAlCuad += secActual**2
             secActual = 0
-            if encontrarDatosSensibles(p):
+            if sensibleData.encontrarDatosSensibles(p):
                 susis += 1
         previo = p
     return susis, secsAlCuad
