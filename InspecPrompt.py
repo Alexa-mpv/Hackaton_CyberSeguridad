@@ -104,7 +104,7 @@ class Analizador:
 
         if notoriedades >= 4 or secuencias >= 50:
             return "La consulta presenta un alto riesgo de seguridad, debe modificarse."
-        elif notoriedades >= 2 or secuencias <= 25:
+        elif notoriedades >= 2 or secuencias >= 25:
             return "La consulta podría contener información sensible."
         else:
             return "La consulta puede proceder."
