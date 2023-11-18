@@ -1,50 +1,67 @@
-import sensibleData
 import InspecPrompt
 
+peligro = InspecPrompt.Analizador()
+peligro.insertaTrigger("cuenta", "bancaria")
+peligro.insertaTrigger("banco", "unnumero")
+peligro.insertaTrigger("bancaria", "unnumero")
+peligro.insertaTrigger("clave", "unnumero")
+peligro.insertaTrigger("usuario", "unnumero")
+peligro.insertaTrigger("contraseña", "unnumero")
+peligro.insertaTrigger("cvv", "unnumero")
+peligro.insertaTrigger("nomina", "empresa")
+peligro.insertaTrigger("nomina", "empresarial")
+peligro.insertaSecuenciaDeTriggers("clave interbancaria unnumero")
 
-class Grafo:
-    def __init__(self):
-        self.G = {}
+dumb_querries = [
+    "¿Cuál sería el tratamiento recomendado para mis ataques de ansiedad?",
+    "¿Cómo puedo consolidar mis deudas y mejorar mi historial crediticio?",
+    "Necesito asesoramiento sobre un problema legal relacionado con mi trabajo.",
+    "¿Cómo puedo proteger mi información personal en línea?",
+    "¿Cuáles son los pasos para recuperar una cuenta perdida que contiene información bancaria?",
+    "¿Cómo puedo recuperar mi contraseña de la cuenta bancaria?",
+    "Necesito ayuda con mi historial médico, ¿qué tratamiento es mejor para la diabetes tipo 2?",
+    "¿Cuáles son los pasos para actualizar mi número de seguro social en mi perfil?",
+    "¿Puedes ayudarme a encontrar formas de mejorar mi puntuación crediticia?",
+    "Estoy teniendo problemas para acceder a mi cuenta de correo electrónico, ¿cómo puedo restablecer mi contraseña?",
+    "¿Cuáles son los pasos para cambiar la dirección en mi cuenta de facturación?",
+    "Necesito asesoramiento sobre inversiones, ¿cuál sería el mejor plan para mi jubilación?",
+    "¿Puedo obtener ayuda para encontrar un especialista en salud mental en mi área?",
+    "¿Cómo puedo agregar una forma de pago adicional a mi cuenta de compras en línea?",
+    "Estoy buscando opciones de seguros, ¿cuál sería el mejor para proteger mi casa?",
+    "¿Puedes recomendarme formas seguras de transferir grandes cantidades de dinero?",
+    "¿Qué precauciones de seguridad debo tomar al compartir información personal en redes sociales?",
+    "¿Hay algún método para verificar la validez de un correo electrónico que solicita información confidencial?",
+    "¿Cómo puedo recuperar el acceso a mi cuenta de inversión si olvidé mi ID de usuario?",
+    "Estoy interesado en obtener un préstamo, ¿cuáles serían los requisitos y tasas de interés?",
+    "¿Cuál es el procedimiento para cambiar la dirección en mi información de cuenta bancaria?",
+    "Estoy buscando opciones de seguros médicos, ¿cuál es el plan más completo?",
+    "¿Cómo puedo transferir fondos de mi cuenta de ahorros a otra cuenta?",
+    "Quiero saber cómo puedo eliminar permanentemente mi historial de navegación en línea.",
+    "¿Cuál es la mejor manera de proteger mi identidad en línea frente al robo de datos?",
+    "Necesito asesoramiento legal sobre un problema de propiedad intelectual, ¿cómo puedo abordarlo?",
+    "¿Qué debo hacer si pierdo mi tarjeta de crédito y necesito cancelarla rápidamente?",
+    "¿Cómo puedo ocultar mi dirección residencial en las redes sociales?",
+    "Estoy teniendo problemas con el acceso a mi cuenta de impuestos en línea, ¿cómo puedo solucionarlo?",
+    "Quiero verificar mi puntaje de crédito, ¿puedo hacerlo de manera segura en línea?",
+    "¿Cómo puedo cambiar la dirección de envío en mi perfil de compra en línea?",
+    "Necesito ayuda para encontrar un abogado especializado en temas de divorcio, ¿alguna recomendación?",
+    "¿Cuál es la mejor forma de proteger mi identidad al hacer compras en internet?",
+    "¿Qué debo hacer si extravío mi tarjeta de débito y necesito bloquearla inmediatamente?",
+    "Estoy teniendo problemas con la confidencialidad de mis datos médicos en una plataforma, ¿cómo puedo mejorarla?",
+    "Quiero verificar mi saldo de cuenta bancaria desde una aplicación móvil, ¿cómo lo hago de manera segura?",
+    "¿Cuál es la mejor manera de asegurar mi red doméstica contra intrusiones cibernéticas?",
+    "¿Cómo puedo eliminar permanentemente mi historial de búsqueda en varios navegadores web?",
+    "Estoy buscando consejos sobre cómo mejorar mi seguridad en línea en redes sociales.",
+    "Quiero consultar sobre el proceso para cambiar mi nombre legalmente en documentos oficiales.",
+]
 
-    def inserta(self, origen, destino, peso=None):
-        if origen not in self.G:
-            self.G[origen] = {}
-        if destino not in self.G:
-            self.G[destino] = {}
-        self.G[origen][destino] = peso
+for q in dumb_querries:
+    peligro.insertaSecuenciaDeTriggers(q)
 
-    def multiInserta(self, cadena: str):
-        palabras = InspecPrompt.limpiaTexto(cadena)
-        previo = palabras.pop(0)
-        for p in palabras:
-            self.inserta(previo, p)
-            previo = p
+print(peligro.veredicto("una cuenta bancaria"))
 
-
-peligro = Grafo()
-peligro.inserta("cuenta", "bancaria")
-peligro.inserta("banco", "unnumero")
-peligro.inserta("bancaria", "unnumero")
-peligro.inserta("clave", "unnumero")
-peligro.inserta("usuario", "unnumero")
-peligro.inserta("contraseña", "unnumero")
-
-
-def analiza_vulnerabilidad(palabras: list) -> [int, int]:
-    susis = 0
-    secsAlCuad = 0
-    secActual = 0
-    previo = ""
-    for p in palabras:
-        if p.isdigit() and len(p) < 8 or len(p) > 12:
-            p = "unnumero"
-        # reviso si la secuencia de la anterior con la actual está fichada como vulnerable
-        if previo in peligro.G and p in peligro.G[previo]:
-            secActual += 1
-        else:
-            secsAlCuad += secActual**2
-            secActual = 0
-            if sensibleData.encontrarDatosSensibles(p):
-                susis += 1
-        previo = p
-    return susis, secsAlCuad
+print(
+    peligro.veredicto(
+        "Quiero consultar sobre el proceso para cambiar mi nombre legalmente en documentos oficiales."
+    )
+)
