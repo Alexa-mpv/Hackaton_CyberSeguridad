@@ -58,12 +58,10 @@ dumb_querries = [
 for q in dumb_querries:
     peligro.insertaSecuenciaDeTriggers(q)
 
-print(peligro.secuencias)
-
-print(peligro.analiza_vulnerabilidad_de_prompt("una cuenta bancaria"))
+print(peligro.veredicto("una cuenta bancaria"))
 
 print(
-    peligro.analiza_vulnerabilidad_de_prompt(
+    peligro.veredicto(
         "Quiero consultar sobre el proceso para cambiar mi nombre legalmente en documentos oficiales."
     )
 )
