@@ -1,6 +1,7 @@
 # Hackaton_CyberSeguridad
 ## Repositorio para desarrollar el proyecto del Hackaton 2023 organizado por la representación POJO del ITAM.
 
+
 Es importante concientizar a los usuarios sobre los peligros de las distintas inteligencias artificiales. En el momento en que alguien escribe y envia un query que contiene información sensible o comprometedora, en ese momento renuncia a la privacidad de esa información y pasa a convertirse en dominio público. 
 
 Proyecto: buscamos crear un filtro de seguridad en el que los usuarios puedan ingresar sus consultas; esta será evaluada de tal forma que se detecte la posibilidad de que contenga información sensible y palabras clave que comprometan la privacidad de esta información.
