@@ -82,3 +82,29 @@ class Analizador:
             previo = p
         secsAlCuad += secActual**2
         return susis, secsAlCuad
+
+    def veredicto(self, query: str):
+        notoriedades, secuencias = self.analiza_vulnerabilidad_de_prompt(query)
+        """_description_
+        Regresa un mensaje que indica el riesgo de seguridad de la entrada. El riesgo de seguridad se calcula con base en
+        dos valores: secuencias y notoriedades. secuencias es un valor entre 0 y 100 que indica el riesgo de seguridad de la entrada. notoriedades es
+        un valor entre 0 y 5 que indica el riesgo de seguridad de la entrada. Si notoriedades es mayor o igual a 4, la entrada
+        presenta un alto riesgo de seguridad. Si notoriedades es 3, la entrada presenta un riesgo de seguridad. Si notoriedades es menor
+        o igual a 0, la entrada presenta un bajo riesgo de seguridad. Si notoriedades es mayor o igual a 1 y menor o igual a 2,
+        se evalúa el valor de secuencias. Si secuencias es mayor o igual a 50, la entrada presenta un alto riesgo de seguridad. Si secuencias es
+        menor o igual a 25, la entrada presenta un riesgo de seguridad. Si secuencias es mayor a 25 y menor a 50, la entrada
+        presenta un bajo riesgo de seguridad.
+        Args:
+            secuencias (int): Un valor entre 0 y 100 que indica el riesgo de seguridad de la entrada.
+            notoriedades (int): Un valor entre 0 y 5 que indica el riesgo de seguridad de la entrada.
+
+        Returns:
+            str: Un mensaje que indica el riesgo de seguridad de la entrada.
+        """
+
+        if notoriedades >= 4 or secuencias >= 50:
+            return "La consulta presenta un alto riesgo de seguridad, debe modificarse."
+        elif notoriedades >= 2 or secuencias <= 25:
+            return "La consulta podría contener información sensible."
+        else:
+            return "La consulta puede proceder."
