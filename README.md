@@ -23,3 +23,13 @@ Repartición de tareas:
     Santiago:
         Creación de la interfaz del sitio web.
         Integración de todas las funciones anteriores.
+
+Tecnologías utilizadas:
+    - Python.
+    - API.
+    - HTML.
+    - Bootstrap con CSS.
+    - JavaSccript.
+    - Ajax.
+    - Jqueries.
+    - Servidores de AWS, c2 virtual server.
