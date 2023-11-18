@@ -1,16 +1,29 @@
-Información tipos:
-    De indentificación 
-        Info que se puede usar para doxxeo
-    Financiera 
-        Lo que implica hacer una transacción bancaria 
-    Médica 
-        Informacion medica, como historial medico, alergias, enfermedades, etc 
-    Contraseñas
-        Se explica sola 
-    Sensible
-        Informacion que se puede usar para dañar a una persona, como las nudes, creecias, politicas, etc 
-Pasos:
-    Determinar el nivel de riesgo para el usario 
-    Informar en lo que se anda metiendo
-    Regañarlo por andar subiendo esas cosas, que no se pase y con un mensaje bien recio
+Existen diferentes tipos de información sensible, pero algunos de los más comunes son:
 
+    Información de identificación: Incluye datos como el nombre, la dirección, el número de teléfono, la fecha de nacimiento, y cualquier otra información que pueda usarse para identificar a una persona.
+
+    Información financiera: Incluye datos como los números de tarjetas de crédito, las cuentas bancarias, y cualquier otra información que pueda usarse para realizar transacciones financieras.
+
+    Información médica: Incluye datos como el historial médico, las alergias, las enfermedades, y cualquier otra información relacionada con la salud de una persona.
+
+    Contraseñas: Son las claves que se utilizan para acceder a cuentas o sistemas protegidos.
+
+    Información sensible: Incluye datos que pueden usarse para dañar a una persona, como las fotos íntimas, las creencias religiosas o políticas, y cualquier otra información que pueda ser usada para        
+    discriminar o acosar a una persona.
+
+¿Qué hacer si se encuentra información sensible?
+
+Si se encuentra información sensible, es importante actuar de inmediato para protegerla. Los pasos que se pueden tomar incluyen:
+
+    Determinar el nivel de riesgo. Es importante determinar si la información sensible es realmente dañina o si se trata de información que no representa un riesgo significativo.
+        Riesgo bajo: La información tiene un impacto limitado si se divulga. Por ejemplo, una dirección de correo electrónico o un número de teléfono.
+
+        Riesgo medio: La información puede utilizarse para causar daño o inconvenientes, pero no es probable que tenga un impacto significativo. Por ejemplo, una fecha de nacimiento o un historial médico no 
+        grave.
+
+        Riesgo alto: La información puede utilizarse para causar un daño significativo o irreparable. Por ejemplo, un número de identificación personal, un número de tarjeta de crédito o un historial        
+        médico grave.
+
+    Informar al propietario de la información. Si la información sensible pertenece a otra persona, es importante informarle del problema.
+
+    Eliminar la información sensible. Si es posible, se debe eliminar la información sensible del sitio web o del archivo donde se encontró.
